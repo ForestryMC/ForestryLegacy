@@ -1,0 +1,32 @@
+
+# 1.6.5.0
+
+- Added: Treebreeding and inheritance.
+- Added: Almost all trees. Still missing are palm and bojuum. (Log textures courtesy of Binnie.)
+- Added: Config option to disable access restrictions on machines.
+- Added: Fruit overlay for leaves. They will now be textured according to the fruitprovider of their trees.
+- Added: Cocoa to jungle trees, apple to oak, cherry to cherry trees, walnut to walnut trees and chestnut to chestnut trees. (Latter three are not yet implemented.)
+- Added: API to enable retrieval and re-use of tree world generators.
+- Removed: Saplings from dungeon loot.
+- Changed: Beealyzer now shows information on the previously hidden chromosome which controls the speed at which bees pollinate.
+- Changed: Empty letters are now stackable.
+- Changed: Newly mutated Nether bees lost the trait giving them the fastest pollination speed. Significantly reduced all pollination speeds.
+- Changed: Bees will now plant flowers in a vastly larger area. They still expect the first flowers to be in the nearer vicinity though.
+- Changed: Cherry tree generator.
+- Changed: Lime tree generator.
+- Changed: Added vine generation to kapok trees.
+- Changed: Increased chance for populated apiaries in beekeeper houses.
+- Bugfix: Fixed a potential crash on negative values in the rng. (Baobab generator)
+- Bugfix: Trade stations now take NBT data into account.
+- Bugfix: Breaking logs should now trigger leaf decay as well.
+- Bugfix: Saplings and leaves now re-render after the TE was synched to server.
+- Removed: Generational and mating info from trees to enable better stacking of saplings.
+- Bugfix: Fixed saplings not dropping when block below is removed.
+- Bugfix: Fixed fast graphics not actually using fast texture.
+- Bugfix: Fixed sequoias only requiring 2x2 saplings.
+- Bugfix: Genetically modified oak trees now take on the correct foliage colour for the biome. (Applies for any tree using ColorizerFoliage.getColourBasic().)
+- Bugfix: Genetically modified saplings can now burn in furnaces.
+- Bugfix: Fixed backpacks switching modes when emptying into chests.
+- Bugfix: Electric engines now display MJ/t. (RichardG)
+- API: Made backpacks more API friendly. Other mods should now be able to define their own. This may have broken a few things! Please test.
+- API: Other mods can use IMC to add items to backpacks without needing to use the API. The message must be keyed 'add-backpack-items' and contain a string of the format 'backpackident@$id:$meta;$otherid:$othermeta...'. (Example: 'forester@2653:0;1233:5') Identical to the manual config.

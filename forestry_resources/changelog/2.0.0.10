@@ -1,0 +1,5 @@
+
+# 2.0.0.10
+
+- Added: Ops can now virtualize trade stations with the '/mail virtualize <tradestation-name>' command. A virtual trade station does not require resources.
+- Changed: Made more trees support more fruit families.

@@ -1,0 +1,101 @@
+/*******************************************************************************
+ * Copyright (c) 2011-2014 SirSengir.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the GNU Lesser Public License v3
+ * which accompanies this distribution, and is available at
+ * http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Various Contributors including, but not limited to:
+ * SirSengir (original work), CovertJaguar, Player, Binnie, MysteriousAges
+ ******************************************************************************/
+package forestry.core.network;
+
+public enum GuiId {
+	AlvearyGUI,
+
+	AlvearySwarmerGUI,
+
+	AnalyzerGUI,
+
+	ApiaristChestGUI,
+
+	ApiaristBackpackGUI,
+
+	ApiaryGUI,
+
+	ArboretumGUI,
+
+	BackpackGUI,
+
+	BackpackT2GUI,
+
+	BeealyzerGUI,
+
+	BottlerGUI,
+
+	CarpenterGUI,
+
+	CentrifugeGUI,
+
+	EngineBronzeGUI,
+
+	EngineCopperGUI,
+
+	EngineTinGUI,
+
+	FabricatorGUI,
+
+	FarmGUI,
+
+	FermenterGUI,
+
+	ForesterGUI,
+
+	GeneratorGUI,
+
+	HabitatLocatorGUI,
+
+	HygroregulatorGUI,
+	
+	ImprinterGUI,
+
+	InfuserGUI,
+
+	LetterGUI,
+
+	MailboxGUI,
+
+	MoistenerGUI,
+
+	MushroomFarmGUI,
+
+	MultiFarmGUI,
+	
+	NetherFarmGUI,
+
+	PeatBogGUI,
+
+	PhilatelistGUI,
+
+	PlantationGUI,
+
+	PropolisPipeGUI,
+
+	PumpkinFarmGUI,
+
+	RaintankGUI,
+
+	SolderingIronGUI,
+
+	SqueezerGUI,
+
+	StillGUI,
+
+	TraderGUI,
+
+	TraderNameGUI,
+	
+	TreealyzerGUI,
+
+	Unknown
+}

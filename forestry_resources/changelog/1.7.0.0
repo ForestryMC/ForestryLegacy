@@ -1,0 +1,60 @@
+
+#1.7.0.0
+
+- Added: Treebreeding and inheritance. Crossbreeding trees occurs when their leaves are pollinated by nearby bees.
+- Added: 17 new, breedable trees. All trees can be bred from the vanilla four. (Log textures courtesy of Binnie.)
+- Added: Trees can bear fruits, some fruits will require a ripening period.
+- Added: Jungle trees have cocoa, oak apple, cherry trees cherries, walnut trees walnuts and chestnut trees chestnuts.
+- Added: Both walnuts and chestnuts squeeze down to 0.2 buckets of seed oil, producing a tiny amount of mulch.
+- Added: Config option to disable access restrictions on machines.
+- Added: Treealyzer will auto-convert vanilla saplings to saplings with genetic information when analyzing them.
+- Added: Fifth page in tree- and beealyzer to show information on classification and species descriptions.
+- Added: Alternative sprites for bees to use in bee addons. (Courtesy of MysteriousAges.)
+
+- Removed: Saplings from dungeon loot.
+- Removed: Generational and mating info from trees to enable better stacking of saplings.
+
+- Changed: Treealyzer and beealyzer have gotten a significant facelift.
+- Changed: Touched up the apiarist's chest gui slightly.
+- Changed: Apple fruit leaves on oak trees do not show a fruit texture anymore.
+- Changed: Beealyzer now shows information on the previously hidden chromosome which controls the speed at which bees pollinate.
+- Changed: Empty letters are now stackable.
+- Changed: Newly mutated Nether bees lost the trait giving them the fastest pollination speed. Significantly reduced all pollination speeds.
+- Changed: Bees will now plant flowers in a vastly larger area. They still expect the first flowers to be in the nearer vicinity though.
+- Changed: Increased chance for populated apiaries in beekeeper houses.
+- Changed: Disabling the version check also disables it on startup.
+- Changed: Impregnated casings only require 1/4th bucket of seed oil for production.
+- Changed: Made space check for tree growth more tolerant.
+- Changed: Blacklisted species are now listed as extinct on the analyzer info page.
+
+- Bugfix: Fixed a bug that might cause incorrect genome comparisons. (h/t Tahg)
+- Bugfix: Fixed a bug that caused incorrect metadata handling when filling containers.
+- Bugfix: Saplings don't drop anymore in creative, when the block is destroyed by a player.
+- Bugfix: Fixed some issues in game mode configs.
+- Bugfix: Beehives cannot be destroyed by the dragon anymore.
+- Bugfix: Fixed saplings not replacing tall grass/snow when planting.
+- Bugfix: Fruit family "nuts" now has a localized string.
+- Bugfix: Trade stations now take NBT data into account.
+- Bugfix: Breaking logs should now trigger leaf decay as well.
+- Bugfix: Saplings and leaves now re-render after server synch.
+- Bugfix: Fixed saplings not dropping when block below is removed.
+- Bugfix: Fixed fast graphics not actually using fast texture on leaf blocks.
+- Bugfix: Fixed sequoias only requiring 2x2 saplings.
+- Bugfix: Genetically modified oak trees now take on the correct foliage colour for the biome. (Applies for any tree using ColorizerFoliage.getColourBasic().)
+- Bugfix: Genetically modified saplings can now burn in furnaces.
+- Bugfix: Fixed backpacks switching modes when emptying into chests.
+- Bugfix: Electric engines now display MJ/t. (RichardG)
+- Bugfix: Fixed saplings rerendering incorrectly before getting their tile data.
+- Bugfix: Fixed germling spritesheet not being pre-loaded.
+- Bugfix: Fixed pick block on half slabs.
+- Bugfix: Fixed half slabs breaking instantly.
+- Bugfix: Try to handle other mods not preserving NBT data more gracefully.
+- Bugfix?: Added a safety check to handle bee and tree data missing a genome.
+- Bugfix: Fences will now be destroyed by fire.
+- Bugfix: Imprinter renders the correct bee icons again.
+- Bugfix: Biogas engines should not get stuck anymore on chunk reload. (denoflions)
+- Bugfix: Most machines with liquid tanks should now handle metadata correctly. (denoflions)
+
+- API: Added API to enable retrieval and re-use of tree world generators.
+- API: Made backpacks more API friendly. Other mods should now be able to define their own.
+- API: Other mods can use IMC to add items to backpacks without needing to use the API. The message must be keyed 'add-backpack-items' and contain a string of the format 'backpackident@$id:$meta;$otherid:$othermeta...'. (Example: 'forester@2653:0;1233:5') Identical to the manual config.

@@ -1,0 +1,12 @@
+
+#1.6.3.0
+
+- Added: Chestnut and Teak saplings.
+- Changed: Only bees that can survive in the village's biome are now generated in beekeeper huts.
+- Changed: Bee princesses and queens are unstackable again.
+- Bugfix: Only a single queen/princess/drone is added to apiaries and alvearies again when using BC pipes.
+- Bugfix: Marshy bees now correctly have a base required damp humidity instead of normal.
+- Bugfix: Fixed farms and radioactive bees destroying IC2 personal safes. (RichardG)
+- Bugfix: Fixed electric item discharge in electrical engines. (RichardG)
+- Bugfix: Fixed an issue that caused drone stacks to be consumed entirely on breeding success.
+- Bugfix: Fixed inventories merging some bees even if they don't match entirely.

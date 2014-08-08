@@ -1,0 +1,12 @@
+
+#1.6.4.0
+
+- Updated: MC 1.4.6.
+- Updated: IC2 API for 1.4.6.
+- Added: Acacia and walnut saplings and trees.
+- Added: Functionality to height chromosome on trees.
+- Added: Recipes for slabs and fences.
+- Added: Treealyzer. Same recipe as the beealyzer but with copper ingots. (WIP!)
+- Changed: Trees will now only grow if the trunk base of the tree to generate contains saplings. (2x2 for chestnut, walnut; 3x3 for redwood; see treealyzer.)
+- Bugfix: Alvearies and apiaries now correctly classify the nether as hellish.
+- Bugfix: Fixed backpacks merging bees without regard for NBT data.

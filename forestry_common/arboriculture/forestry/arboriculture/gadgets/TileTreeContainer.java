@@ -1,0 +1,99 @@
+/*******************************************************************************
+ * Copyright (c) 2011-2014 SirSengir.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the GNU Lesser Public License v3
+ * which accompanies this distribution, and is available at
+ * http://www.gnu.org/licenses/gpl-3.0.txt
+ * 
+ * Various Contributors including, but not limited to:
+ * SirSengir (original work), CovertJaguar, Player, Binnie, MysteriousAges
+ ******************************************************************************/
+package forestry.arboriculture.gadgets;
+
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.tileentity.TileEntity;
+import forestry.api.arboriculture.ITree;
+import forestry.arboriculture.genetics.Tree;
+import forestry.core.network.ForestryPacket;
+import forestry.core.network.INetworkedEntity;
+import forestry.core.network.PacketIds;
+import forestry.core.network.PacketTileNBT;
+import forestry.core.proxy.Proxies;
+
+/**
+ * This is the base TE class for any block that needs to contain tree genome information.
+ * 
+ * @author SirSengir
+ */
+public abstract class TileTreeContainer extends TileEntity implements INetworkedEntity {
+	
+	private ITree containedTree;
+
+	/* SAVING & LOADING */
+	@Override
+	public void readFromNBT(NBTTagCompound nbttagcompound) {
+		super.readFromNBT(nbttagcompound);
+
+		if (nbttagcompound.hasKey("ContainedTree")) {
+			containedTree = new Tree(nbttagcompound.getCompoundTag("ContainedTree"));
+		}
+	}
+
+	@Override
+	public void writeToNBT(NBTTagCompound nbttagcompound) {
+		super.writeToNBT(nbttagcompound);
+
+		if (containedTree != null) {
+			NBTTagCompound subcompound = new NBTTagCompound();
+			containedTree.writeToNBT(subcompound);
+			nbttagcompound.setCompoundTag("ContainedTree", subcompound);
+		}
+	}
+
+	/* CLIENT INFORMATION */
+	
+	/* CONTAINED TREE */
+	public void setTree(ITree tree) {
+		this.containedTree = tree;
+		if(tree != null)
+			sendNetworkUpdate();
+	}
+
+	public ITree getTree() {
+		return this.containedTree;
+	}
+
+	/* UPDATING */
+	/**
+	 * This doesn't use normal TE updates
+	 */
+	@Override
+	public boolean canUpdate() {
+		return false;
+	}
+
+	/**
+	 * Leaves and saplings will implement their logic here.
+	 */
+	public abstract void onBlockTick();
+
+	/* INETWORKEDENTITY */
+	@Override
+	public Packet getDescriptionPacket() {
+		return new PacketTileNBT(PacketIds.TILE_NBT, this).getPacket();
+	}
+
+	@Override
+	public void sendNetworkUpdate() {
+		Proxies.net.sendNetworkPacket(new PacketTileNBT(PacketIds.TILE_NBT, this), xCoord, yCoord, zCoord);
+	}
+
+	@Override
+	public void fromPacket(ForestryPacket packetRaw) {
+		PacketTileNBT packet = (PacketTileNBT) packetRaw;
+		this.readFromNBT(packet.getTagCompound());
+		worldObj.markBlockForRenderUpdate(xCoord, yCoord, zCoord);
+	}
+
+}
